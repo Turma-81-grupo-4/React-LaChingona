@@ -1,8 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Produtos from "./components/produtos/Produtos";
-import Footer from "./components/footer/Footer";
-import Sobre from "./pages/sobre/Sobre";
+
 
 function App() {
   return (
@@ -13,7 +12,6 @@ function App() {
             <Route path="/" element={<Produtos />} />
           </Routes>
         </div>
-        <Footer />
       </BrowserRouter>
     </>
   );
