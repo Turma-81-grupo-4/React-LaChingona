@@ -3,25 +3,18 @@ import "./App.css";
 import Produtos from "./components/produtos/Produtos";
 import Navbar from "./components/navbar/Navbar"; // novo
 
+import Home from "./pages/home/Home";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <div>
-          <Routes>
-            <Route path="/produtos" element={<Produtos />} />
-          </Routes>
-        </div>
+        <Navbar /> 
+        <Routes>
+          <Route path="/" element={<Produtos />} />
+        </Routes>
       </BrowserRouter>
     </>
-    <BrowserRouter>
-      <Navbar /> 
-      <Routes>
-        <Route path="/" element={<Produtos />} />
-      </Routes>
-    </BrowserRouter>
-
   );
 }
 
