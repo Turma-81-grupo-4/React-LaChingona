@@ -3,6 +3,7 @@ import "./App.css";
 import Produtos from "./components/produtos/Produtos";
 import Navbar from "./components/navbar/Navbar"; // novo
 
+
 function App() {
   return (
     <BrowserRouter>
