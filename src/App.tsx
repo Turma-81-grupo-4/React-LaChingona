@@ -6,12 +6,22 @@ import Navbar from "./components/navbar/Navbar"; // novo
 
 function App() {
   return (
+    <>
+      <BrowserRouter>
+        <div>
+          <Routes>
+            <Route path="/produtos" element={<Produtos />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </>
     <BrowserRouter>
       <Navbar /> 
       <Routes>
         <Route path="/" element={<Produtos />} />
       </Routes>
     </BrowserRouter>
+
   );
 }
 
