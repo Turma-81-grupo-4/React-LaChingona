@@ -1,1 +1,28 @@
 @import "tailwindcss";
+:root {
+  --cor-primaria: #b20f0f;
+  --cor-secundaria: #206e04;
+  --cor-acento: #1f6805;
+  --cor-fundo: #e6e2de;
+}
+.text-primary {
+  color: var(--cor-primaria);
+}
+.text-secondary {
+  color: var(--cor-secundaria);
+}
+.text-accent {
+  color: var(--cor-acento);
+}
+.bg-primary {
+  background-color: var(--cor-primaria);
+}
+.bg-secondary {
+  background-color: var(--cor-secundaria);
+}
+.bg-accent {
+  background-color: var(--cor-acento);
+}
+.bg-background {
+  background-color: var(--cor-fundo);
+}

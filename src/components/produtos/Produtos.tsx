@@ -1,4 +1,17 @@
+import { useState } from "react";
+
 function Produtos() {
+  const [ativo, setAtivo] = useState(false);
+
+  const [contagem, setContagem] = useState(0);
+
+  const incrementarContagem = () => {
+    setContagem((contagemAnterior) => contagemAnterior + 1);
+  };
+
+  const handleClick = () => {
+    setAtivo(!ativo);
+  };
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
       <div className="max-w-sm w-full bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all">
@@ -35,8 +48,12 @@ function Produtos() {
             </div>
           </div>
 
-          <button className="w-full bg-red-600 hover:bg-red-700 text-white font-medium py-3 rounded-lg transition-colors">
-            Adicionar ao carrinho
+          <button
+            onClick={handleClick}
+            onAuxClick={incrementarContagem}
+            className="w-full bg-primary hover:bg-red-700 text-white font-medium py-3 rounded-lg transition-colors ${ativo ? 'bg-primary text-white' : 'bg-gray-300 text-black'}"
+          >
+            {ativo ? contagem : "Adicionar ao carrinho"}
           </button>
         </div>
       </div>
