@@ -1,6 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Produtos from "./components/produtos/Produtos";
+import Navbar from "./components/navbar/Navbar"; // novo
+
 
 function App() {
   return (
@@ -13,6 +15,13 @@ function App() {
         </div>
       </BrowserRouter>
     </>
+    <BrowserRouter>
+      <Navbar /> 
+      <Routes>
+        <Route path="/" element={<Produtos />} />
+      </Routes>
+    </BrowserRouter>
+
   );
 }
 
