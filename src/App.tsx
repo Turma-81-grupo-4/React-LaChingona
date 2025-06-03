@@ -1,18 +1,18 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Produtos from "./components/produtos/Produtos";
+import Navbar from "./components/navbar/Navbar"; // novo
+
 import Home from "./pages/home/Home";
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <div>
-          <Routes>
-            <Route path="/" element={<Home/>} />
-            <Route path="/home" element={<Home />} />
-          </Routes>
-        </div>
+        <Navbar /> 
+        <Routes>
+          <Route path="/" element={<Produtos />} />
+        </Routes>
       </BrowserRouter>
     </>
   );
