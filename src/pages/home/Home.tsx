@@ -1,24 +1,25 @@
 import React from 'react';
 import { MapPin, Phone, Clock, Star } from 'lucide-react';
+import { Link } from 'react-router';
 
 const Home: React.FC = () => {
   const menuItems = [
     {
       id: 1,
       name: "Bowls Especiais",
-      description: "Bowls artesanais com carne temperada e molhos especiais",
+      description: "Bowls artesanais com molhos especiais - Também disponível em opção vegana!",
       image: "./src/assets/img/bowls-cardapio-picture-alt.png"
     },
     {
       id: 2,
       name: "Burrito Supremo",
-      description: "Burrito gigante com frango, feijão, queijo e guacamole",
+      description: "Burrito gigante com temperos mexicanos orgânicos e molho delicioso - Temos também opção vegetariana!", 
       image: "./src/assets/img/burrito-ok-final.png"
     },
     {
       id: 3,
       name: "Quesadilla Mexicana",
-      description: "Tortilla grelhada com queijo derretido e temperos mexicanos",
+      description: "Tortilla grelhada com queijo vegano derretido e temperos mexicanos",
       image: "./src/assets/img/quesadillas-cardapio-picture.png"
     }
   ];
@@ -43,9 +44,11 @@ const Home: React.FC = () => {
                 <Star key={star} className="w-8 h-8 fill-red-700 text-red-700" />
               ))}
             </div>
-            <button className="bg-gradient-to-r from-green-800 to-red-700 hover:from-green-600 hover:to-red-600 text-white font-bold py-3 px-8 rounded-full text-lg transition-all transform hover:scale-105 shadow-lg">
-              Ver Cardápio
-            </button>
+            <Link to="/produtos" className="inline-block">
+              <button className="bg-gradient-to-r from-green-800 to-red-700 hover:from-green-600 hover:to-red-600 text-white font-bold py-3 px-8 rounded-full text-lg transition-all transform hover:scale-105 shadow-lg">
+                Ver Cardápio
+              </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -63,29 +66,28 @@ const Home: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {menuItems.map((item) => (
-              <div key={item.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:scale-105 border-2 border-gray-200 hover:border-red-400">
-                <div className="h-48 bg-gray-200 relative overflow-hidden">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                  />
+              <Link to={`/produtos/`} className="no-underline" key={item.id}>
+                <div key={item.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all transform hover:scale-105 border-2 border-gray-200 hover:border-red-400">
+                  <div className="h-48 bg-gray-200 relative overflow-hidden">
+                    <img
+                      src={item.image}
+                      alt={item.name}
+                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h4 className="text-xl font-bold text-black mb-2">{item.name}</h4>
+                    <p className="text-gray-600 mb-4">{item.description}</p>
+                  </div>
                 </div>
-                <div className="p-6">
-                  <h4 className="text-xl font-bold text-black mb-2">{item.name}</h4>
-                  <p className="text-gray-600 mb-4">{item.description}</p>
-                  <button className="w-full bg-gradient-to-r from-green-800 to-red-700 text-white py-2 px-4 rounded-lg hover:from-green-600 hover:to-red-600 transition-all font-semibold">
-                    Adicionar ao Pedido
-                  </button>
-                </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Location Section */}
-      <section id="location" className="py-16 bg-white">
+      < section id="location" className="py-16 bg-white" >
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h3 className="text-4xl font-bold text-black mb-4">Nossa Localização</h3>
@@ -102,7 +104,7 @@ const Home: React.FC = () => {
                     <MapPin className="w-6 h-6 text-green-800 mt-1 flex-shrink-0" />
                     <div>
                       <p className="font-semibold text-gray-800">Endereço:</p>
-                      <p className="text-gray-600">Av. Paulista - Bela Vista<br />São Paulo, SP - 01234-567</p>
+                      <p className="text-gray-600">Av. Paulista - Bela Vista<br />São Paulo, SP - 01310-930</p>
                     </div>
                   </div>
 
@@ -152,8 +154,8 @@ const Home: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </section >
+    </div >
   );
 };
 

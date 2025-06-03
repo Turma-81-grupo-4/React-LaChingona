@@ -20,7 +20,7 @@ export default function Navbar() {
         <ul className="flex gap-8">
           <li>
             <Link
-              to="/"
+              to="/home"
               className="text-[#e0f2f1] hover:text-green-600 font-semibold transition-all duration-200 tracking-wide"
             >
               Home
@@ -32,6 +32,14 @@ export default function Navbar() {
               className="text-[#e0f2f1] hover:text-green-600 font-semibold transition-all duration-200 tracking-wide"
             >
               Cardápio
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/sobre"
+              className="text-[#e0f2f1] hover:text-green-600 font-semibold transition-all duration-200 tracking-wide"
+            >
+              Sobre
             </Link>
           </li>
         </ul>
